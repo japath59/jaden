@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hero Directions</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=JetBrains+Mono:wght@300..500&display=swap" rel="stylesheet" />
+<style>
+  :root { --paper:#ECEBE6; --ink:#0B0D18; --prussian:#1E3A6E; --cobalt:#2F5FB3; }
+  body { margin:0; background:var(--paper); color:var(--ink); font-family:"JetBrains Mono",monospace; font-size:12px; }
+  header { padding:24px 32px 12px; border-bottom:1px solid rgba(11,13,24,.35); display:flex; justify-content:space-between; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(780px,1fr)); gap:40px; padding:28px 32px 48px; }
+  h2 { font-family:"Archivo"; font-weight:900; font-stretch:125%; font-size:30px; color:var(--cobalt); margin:0 0 4px; letter-spacing:-.01em; }
+  p { margin:0 0 16px; line-height:1.6; max-width:56ch; }
+  .frames { display:flex; gap:16px; align-items:flex-start; }
+  .desk { width:calc(1440px * var(--s)); height:calc(900px * var(--s)); --s:.4; overflow:hidden; border:1px solid rgba(11,13,24,.4); flex:none; }
+  .mob  { width:calc(375px * var(--s)); height:calc(812px * var(--s)); --s:.45; overflow:hidden; border:1px solid rgba(11,13,24,.4); border-radius:10px; flex:none; }
+  iframe { border:0; transform:scale(var(--s)); transform-origin:0 0; }
+  .desk iframe { width:1440px; height:900px; }
+  .mob iframe { width:375px; height:812px; }
+  .lbl { margin-top:6px; opacity:.7 }
+</style>
+</head>
+<body>
+<header><span>[ hero directions ]</span><span>vol. 01 / pick one, or a mix</span></header>
+<div class="grid">
+  <section>
+    <h2>A — COVER</h2>
+    <p>bleach covers: giant slate "01" behind a duotoned cutout of you, name in heavy archivo that turns white where it crosses your figure, small "by" credit and a barcode sticker in the corners.</p>
+    <div class="frames">
+      <div><div class="desk"><iframe src="hero-a.html" title="direction A desktop"></iframe></div><div class="lbl">1440</div></div>
+      <div><div class="mob"><iframe src="hero-a.html" title="direction A mobile"></iframe></div><div class="lbl">375</div></div>
+    </div>
+  </section>
+  <section>
+    <h2>B — POSTER</h2>
+    <p>marías poster: your photo blurred into a cyanotype haze, thin lowercase inter, one full-width hairline, and the cover credits as a small two-row tour list with [ ◊ ] markers.</p>
+    <div class="frames">
+      <div><div class="desk"><iframe src="hero-b.html" title="direction B desktop"></iframe></div><div class="lbl">1440</div></div>
+      <div><div class="mob"><iframe src="hero-b.html" title="direction B mobile"></iframe></div><div class="lbl">375</div></div>
+    </div>
+  </section>
+</div>
+</body>
+</html>

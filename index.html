@@ -4,227 +4,202 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>j.path</title>
-  
+  <meta name="description" content="jaden pathammavong — computational modeling and data analytics at virginia tech. data, cloud and consulting." />
+  <meta name="theme-color" content="#1E3A6E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Inter:wght@200..500&family=JetBrains+Mono:wght@400..500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@700&text=%E5%89%A3%E9%81%93&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-  
+
+  <!-- duotone for the hero figure: ink → prussian → cobalt → haze → paper -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <filter id="duo-hero" color-interpolation-filters="sRGB">
+      <feColorMatrix type="matrix" values=".30 .55 .15 0 0  .30 .55 .15 0 0  .30 .55 .15 0 0  0 0 0 1 0" />
+      <feComponentTransfer>
+        <feFuncR type="table" tableValues=".043 .118 .184 .663 .961" />
+        <feFuncG type="table" tableValues=".051 .227 .373 .765 .957" />
+        <feFuncB type="table" tableValues=".094 .431 .702 .855 .941" />
+      </feComponentTransfer>
+    </filter>
+  </svg>
+
   <main id="root">
-    <div class="min-h-screen bg-gradient-to-br from-[#2D336B] via-[#6096B4] to-[#93BFCF] text-white font-sans selection:bg-white selection:text-[#2D336B] p-6 md:p-12 lg:p-24 flex flex-col lowercase tracking-widest text-xs">
-      
-      <nav class="flex justify-between items-center border-b border-white/20 pb-6 mb-24 md:mb-40 text-[10px] md:text-xs">
-        <div class="flex gap-6 md:gap-12">          
-          <a href="#about" class="hover:text-white/60 hover:line-through transition-all">[ about ]</a>
-          <a href="#work" class="hover:text-white/60 hover:line-through transition-all">[ discography ]</a>
-          <a href="#gal" class="hover:text-white/60 hover:line-through transition-all">[ gallery ]</a>
+
+    <!-- ============================ HERO / COVER ============================ -->
+    <header class="hero">
+      <nav class="nav mono" aria-label="primary">
+        <div class="links">
+          <a href="#about" class="strike">[ about ]</a>
+          <a href="#work" class="strike">[ discography ]</a>
+          <a href="#gal" class="strike">[ gallery ]</a>
         </div>
-        <div class="font-mono text-white/70">
-          vol. 01
-        </div>
+        <div>vol. 01</div>
       </nav>
 
-      <header class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-32 mb-40 items-start">
-        <div class="relative w-full aspect-[4/5] max-w-lg lg:-ml-12 pointer-events-none">
-          <div class="absolute inset-0 bg-black/10 mix-blend-overlay opacity-30 z-10"></div>
-          <img 
-            src="photos/ibm.jpg" 
-            alt="headshot" 
-            class="w-full h-full object-cover scale-110"
-          />
-        </div>
-        
-        <div class="flex flex-col gap-12 pt-0 lg:pt-24 max-w-md">
-          <h1 class="text-sm md:text-base font-bold tracking-[0.2em] text-white">
-            jaden pathammavong
-          </h1>
-          <div class="text-xs md:text-sm leading-loose text-white">
-            <p class="mb-8">
-              previous early associate consultant intern at ibm.
-            </p>
-            <p class="mb-8 text-white/80">
-              Computational modeling and data analytics at virginia tech.
-            </p>
-            <p class="font-mono text-[10px] text-white/50">
-              recorded in virginia / 04 . 21 . 26. <br />
-              all rights reserved.
-            </p>
-          </div>
-        </div>
-      </header>
+      <div class="stage">
+        <div class="blocks" aria-hidden="true"><i></i><i></i><i></i></div>
+        <img class="lily" src="photos/lily-outline.png" alt="" />
+        <img class="fig" src="photos/ibm-cutout.webp" alt="headshot" />
+      </div>
 
-      <section id="about" class="mb-40">
-        <div class="border-b border-white/20 pb-4 mb-8 text-white/70 font-mono text-[10px]">
-          [ about // ]
+      <div class="top">
+        <h1>jaden pathammavong <span class="vol">( vol. 01 )</span></h1>
+      </div>
+
+      <div class="lower">
+        <div class="rule">
+          <span>recorded in virginia</span>
+          <span class="mono">04 . 21 . 26.</span>
+          <span class="mono">/ all rights reserved.</span>
         </div>
-        <div class="text-xs md:text-sm leading-loose text-white">
-          <p class="mb-8">
+        <div class="credits">
+          <div class="row"><span class="k">side a</span><span>previous early associate consultant intern at ibm.</span><span class="s">[ ◊ ]</span></div>
+          <div class="row"><span class="k">side b</span><span>Computational modeling and data analytics at virginia tech.</span><span class="s">[ ♦ ]</span></div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ============================ ABOUT / LINER NOTES ===================== -->
+    <section id="about" class="section about">
+      <div class="label mono">
+        <span>[ about // ]</span>
+      </div>
+
+      <div class="grid">
+        <div class="side">
+          <h2 class="title">Liner<br />Notes</h2>
+          <p class="mono" style="margin-top:28px">
+            <span class="sq"></span>cmda / virginia tech<br />
+            <span class="sq"></span>wind ensemble<br />
+            <span class="sq"></span>philharmonic orchestra<br />
+            <span class="sq"></span>kendo
+          </p>
+        </div>
+
+        <div class="notes">
+          <p>
             As a senior student at Virginia Tech studying Computational Modeling and Data Analytics (CMDA), I have a strong interest in the intersection of design, technology, and data. I am also interested in economics. I like finding the math behind human decisions. I spend my time exploring how quantitative models can explain the psychological and economic ways we value and exchange resources.
           </p>
-          <p class="mb-8">
-            In addition to my developing skills in data analysis, visualization, mathematics, and statistics. I'm currently exploring data engineering, improving sql, python, and databricks. I want to work with cloud, data, and clients.
+          <p>
+            In addition to my developing skills in data analysis, visualization, mathematics, and statistics, I'm currently exploring data engineering, improving sql, python, and databricks. I want to work with cloud, data, and clients.
           </p>
-          <p class="mb-8">
-            Outside of academics, I practice Kendo, a Japanese martial art that has taught me focus, discipline, and respect. I’m also deeply involved in music, I am apart of Virginia tech's wind ensemble and philharmonic orchestra. Continuing my dedication to playing helps me stay creative and balanced both in life and in problem-solving.
+          <p>
+            Outside of academics, I practice Kendo, a Japanese martial art that has taught me focus, discipline, and respect. I’m also deeply involved in music, I am a part of Virginia Tech's wind ensemble and philharmonic orchestra. Continuing my dedication to playing helps me stay creative and balanced both in life and in problem-solving.
           </p>
         </div>
-      </section>
 
-      <section id="work" class="mb-40">
-        <div class="border-b border-white/20 pb-4 mb-8 text-white/70 font-mono text-[10px]">
-          [ discography // ]
+        <img class="lily-dots" src="photos/lily-dots.png" alt="" loading="lazy" />
+      </div>
+    </section>
+
+    <!-- ============================ DISCOGRAPHY / TOUR LIST ================= -->
+    <section id="work" class="section work">
+      <div class="label mono">
+        <span>[ discography // ]</span>
+        <span>2025 — 2026</span>
+      </div>
+
+      <div class="intro">
+        <div>
+          <h2 class="title">Disco&shy;graphy</h2>
+          <p class="now" style="margin-top:32px">
+            <span class="mono"><span class="sq"></span>now playing</span>
+            Current Classes: Cryptography 2, Mathematical Modeling 2, Senior Capstone, Experimental Design, Philharmonic orchestra
+          </p>
         </div>
-        <div class="flex flex-col">
-          <div class="text-xs md:text-sm leading-loose text-white">
-            <p class="mb-8">
-              Current Classes: Cryptography 2, Mathematical Modeling 2, Senior Capstone, Experimental Design, Philharmonic orchestra
-            </p>
-          </div>
-          <a href="#" class="group grid grid-cols-[80px_1fr_auto] md:grid-cols-[120px_1fr_auto] gap-4 md:gap-8 py-6 border-b border-white/20 items-baseline transition-colors hover:border-white/40">
-            <div class="font-mono text-white/70 text-[10px] md:text-xs group-hover:line-through transition-all">
-              2026.5
-            </div>
-            <div class="group-hover:text-white/80 transition-colors">
-              <span class="font-medium text-white">"Modeling the Opiod Epidemic"</span> 
-            </div>
-            <div class="text-right text-[10px] md:text-xs text-white/70 font-mono group-hover:line-through transition-all">
-              Python / MATLAB / SAIR Model
-            </div>
-          </a>
+        <span class="mirror" aria-hidden="true">the<br />tracklist</span>
+      </div>
 
-          <a href="#" class="group grid grid-cols-[80px_1fr_auto] md:grid-cols-[120px_1fr_auto] gap-4 md:gap-8 py-6 border-b border-white/20 items-baseline transition-colors hover:border-white/40">
-            <div class="font-mono text-white/70 text-[10px] md:text-xs group-hover:line-through transition-all">
-              2026.4
-            </div>
-            <div class="group-hover:text-white/80 transition-colors">
-              <span class="font-medium text-white">"Datafy"</span> 
-            </div>
-            <div class="text-right text-[10px] md:text-xs text-white/70 font-mono group-hover:line-through transition-all">
-              next.js / spotify API
-            </div>
-          </a>
+      <div class="tour">
+        <div class="head mono" aria-hidden="true"><span>date</span><span>type</span><span>title</span><span style="text-align:right">tools</span></div>
 
-          <a href="#" class="group grid grid-cols-[80px_1fr_auto] md:grid-cols-[120px_1fr_auto] gap-4 md:gap-8 py-6 border-b border-white/20 items-baseline transition-colors hover:border-white/40">
-            <div class="font-mono text-white/70 text-[10px] md:text-xs group-hover:line-through transition-all">
-              2026.04
-            </div>
-            <div class="group-hover:text-white/80 transition-colors">
-              <span class="font-medium text-white">"Alpine case competition"</span> 
-            </div>
-            <div class="text-right text-[10px] md:text-xs text-white/70 font-mono group-hover:line-through transition-all">
-              R / python(pandas)
-            </div>
-          </a>  
+        <a href="#">
+          <span class="date">2026.05</span><span class="type" title="research">[ ▢ ]</span>
+          <span class="name">"Modeling the Opioid Epidemic"</span>
+          <span class="tools">Python / MATLAB / SAIR Model</span>
+        </a>
+        <a href="#">
+          <span class="date">2026.04</span><span class="type" title="build">[ ♦ ]</span>
+          <span class="name">"Datafy"</span>
+          <span class="tools">next.js / spotify API</span>
+        </a>
+        <a href="#">
+          <span class="date">2026.04</span><span class="type" title="competition">[ ◊ ]</span>
+          <span class="name">"Alpine case competition"</span>
+          <span class="tools">R / python(pandas)</span>
+        </a>
+        <a href="#">
+          <span class="date">2026.04</span><span class="type" title="competition">[ ◊ ]</span>
+          <span class="name">"ASA Datafest"</span>
+          <span class="tools">R / python(pandas)</span>
+        </a>
+        <a href="#">
+          <span class="date">2025.12</span><span class="type" title="research">[ ▢ ]</span>
+          <span class="name">"Perfect Graph Theory"</span>
+          <span class="tools">latex</span>
+        </a>
+        <a href="#">
+          <span class="date">2025.11</span><span class="type" title="competition">[ ◊ ]</span>
+          <span class="name">"CMDA data competition"</span>
+          <span class="tools">R</span>
+        </a>
+        <a href="#">
+          <span class="date">2025.11</span><span class="type" title="build">[ ♦ ]</span>
+          <span class="name">"Numina" powered by ibm</span>
+          <span class="tools">next.js / ibmwatsonx</span>
+        </a>
+      </div>
 
-          <a href="#" class="group grid grid-cols-[80px_1fr_auto] md:grid-cols-[120px_1fr_auto] gap-4 md:gap-8 py-6 border-b border-white/20 items-baseline transition-colors hover:border-white/40">
-            <div class="font-mono text-white/70 text-[10px] md:text-xs group-hover:line-through transition-all">
-              2026.04
-            </div>
-            <div class="group-hover:text-white/80 transition-colors">
-              <span class="font-medium text-white">"ASA Datafest"</span> 
-            </div>
-            <div class="text-right text-[10px] md:text-xs text-white/70 font-mono group-hover:line-through transition-all">
-              R / python(pandas)
-            </div>
-          </a>
+      <div class="legend mono">
+        <span><b>[ ◊ ]</b> competition</span>
+        <span><b>[ ♦ ]</b> build</span>
+        <span><b>[ ▢ ]</b> research</span>
+      </div>
+    </section>
 
-          <a href="#" class="group grid grid-cols-[80px_1fr_auto] md:grid-cols-[120px_1fr_auto] gap-4 md:gap-8 py-6 border-b border-white/20 items-baseline transition-colors hover:border-white/40">
-            <div class="font-mono text-white/70 text-[10px] md:text-xs group-hover:line-through transition-all">
-              2025.12
-            </div>
-            <div class="group-hover:text-white/80 transition-colors">
-              <span class="font-medium text-white">"Perfect Graph Theory"</span> 
-            </div>
-            <div class="text-right text-[10px] md:text-xs text-white/70 font-mono group-hover:line-through transition-all">
-              latex
-            </div>
-          </a>
+    <!-- ============================ GALLERY ================================= -->
+    <section id="gal" class="section gallery">
+      <details>
+        <summary>
+          <h2 class="title">Gallery</h2>
+          <span class="meta"><span class="mono">[ gallery // ]</span><span class="plus" aria-hidden="true">+</span></span>
+        </summary>
 
-          <a href="#" class="group grid grid-cols-[80px_1fr_auto] md:grid-cols-[120px_1fr_auto] gap-4 md:gap-8 py-6 border-b border-white/20 items-baseline transition-colors hover:border-white/40">
-            <div class="font-mono text-white/70 text-[10px] md:text-xs group-hover:line-through transition-all">
-              2025.11
-            </div>
-            <div class="group-hover:text-white/80 transition-colors">
-              <span class="font-medium text-white">"CMDA data competition"</span> 
-            </div>
-            <div class="text-right text-[10px] md:text-xs text-white/70 font-mono group-hover:line-through transition-all">
-              R
-            </div>
-          </a>
-
-          <a href="#" class="group grid grid-cols-[80px_1fr_auto] md:grid-cols-[120px_1fr_auto] gap-4 md:gap-8 py-6 border-b border-white/20 items-baseline transition-colors hover:border-white/40">
-            <div class="font-mono text-white/70 text-[10px] md:text-xs group-hover:line-through transition-all">
-              2025.11
-            </div>
-            <div class="group-hover:text-white/80 transition-colors">
-              <span class="font-medium text-white">"Numina" powered by ibm</span> 
-            </div>
-            <div class="text-right text-[10px] md:text-xs text-white/70 font-mono group-hover:line-through transition-all">
-              next.js / ibmwatsonx
-            </div>
-          </a>
-
-
-
+        <div class="photos">
+          <div class="kendo-v" lang="ja">剣道<small>kendo</small></div>
+          <figure class="ph k1"><img src="photos/ken1.jpg" alt="Ken 1" loading="lazy" decoding="async" /></figure>
+          <figure class="ph k2"><img src="photos/ken2.jpg" alt="Ken 2" loading="lazy" decoding="async" /></figure>
+          <figure class="ph p3"><img src="photos/orc.jpg" alt="Orc" loading="lazy" decoding="async" /></figure>
+          <figure class="ph p4"><img src="photos/picnic.jpg" alt="Picnic" loading="lazy" decoding="async" /></figure>
+          <figure class="ph p5"><img src="photos/nm.jpg" alt="Nm" loading="lazy" decoding="async" /></figure>
         </div>
-      </section>
+      </details>
+    </section>
 
-      <section id="gal" class="mb-40">
-        <details class="group/details">
-          
-          <summary class="border-b border-white/20 pb-4 mb-8 text-white/70 font-mono text-[10px] cursor-pointer hover:text-white transition-colors list-none flex justify-between items-center [&::-webkit-details-marker]:hidden">
-            <span>[ gallery // ]</span>
-            <span class="text-base font-sans leading-none transition-transform duration-300 group-open/details:rotate-45">+</span>
-          </summary>
+    <!-- ============================ FOOTER ================================== -->
+    <footer class="footer">
+      <span class="spark" style="left:12%;top:22%;--s:70px"></span>
+      <span class="spark" style="left:78%;top:14%;--s:110px;animation-delay:-2s"></span>
+      <span class="spark" style="left:64%;top:58%;--s:46px;animation-delay:-4s"></span>
+      <span class="spark" style="left:90%;top:70%;--s:30px;animation-delay:-1s"></span>
+      <span class="spark" style="left:34%;top:40%;--s:24px;animation-delay:-3s"></span>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div class="overflow-hidden rounded-lg">
-              <img src="photos/ken1.jpg" alt="Ken 1" class="w-full h-full object-cover aspect-square hover:scale-105 transition-transform duration-300">
-            </div>
+      <p class="sign" aria-hidden="true">j.path<span class="mono">vol. 01</span></p>
 
-            <div class="overflow-hidden rounded-lg">
-              <img src="photos/ken2.jpg" alt="Ken 2" class="w-full h-full origin-top aspect-square hover:scale-105 transition-transform duration-300">
-            </div>
-
-            <div class="overflow-hidden rounded-lg">
-              <img src="photos/orc.jpg" alt="Orc" class="w-full h-full object-cover aspect-square hover:scale-105 transition-transform duration-300">
-            </div>
-
-            <div class="overflow-hidden rounded-lg">
-              <img src="photos/picnic.jpg" alt="Picnic" class="w-full h-full object-cover aspect-square hover:scale-105 transition-transform duration-300">
-            </div>
-            <div class="overflow-hidden rounded-lg">
-              <img src="photos/nm.jpg" alt="Nm" class="w-full h-full object-cover aspect-square hover:scale-105 transition-transform duration-300">
-            </div>
-          </div>
-          
-        </details>
-      </section>
-
-      <footer class="mt-auto border-t border-white/20 pt-6 flex flex-wrap justify-between items-center text-[10px] font-mono text-white/70 gap-4">
-        
-        <div class="flex gap-4 md:gap-8">
-          <a href="mailto:japath59@vt.edu" class="hover:text-white hover:line-through transition-colors">
-            [ email ]
-          </a>
-          
-          <a href="https://github.com/japath59" target="_blank" rel="noopener noreferrer" class="hover:text-white hover:line-through transition-colors">
-            [ github ]
-          </a>
-
-          <a href="https://www.linkedin.com/in/jadenpathammavong" target="_blank" rel="noopener noreferrer" class="hover:text-white hover:line-through transition-colors">
-            [ linkedin ]
-          </a>
+      <div class="bar mono">
+        <div class="links">
+          <a href="mailto:japath59@vt.edu" class="strike">[ email ]</a>
+          <a href="https://github.com/japath59" target="_blank" rel="noopener noreferrer" class="strike">[ github ]</a>
+          <a href="https://www.linkedin.com/in/jadenpathammavong" target="_blank" rel="noopener noreferrer" class="strike">[ linkedin ]</a>
         </div>
+        <span>[ © 2026 ]</span>
+      </div>
+    </footer>
 
-        <div class="flex gap-4 items-center">
-          <span class="hidden md:inline-block text-white/30 font-sans">—</span>
-          <span>[ © 2026 ]</span>
-        </div>
-        
-      </footer>
-      
-    </div>
   </main>
 
 </body>

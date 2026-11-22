@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>hero A — volume cover</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Inter:wght@200..500&family=JetBrains+Mono:wght@300..500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="base.css" />
+<style>
+  body { background: var(--paper); color: var(--ink); }
+  .paper { background-color: var(--paper); background-image: var(--fibers); }
+  .nav { color: var(--ink); border-bottom-color: rgba(11,13,24,.35); position: relative; z-index: 10; }
+  .nav .vol { color: var(--prussian); }
+
+  .cover {
+    --fx: 31cqw;            /* figure left edge */
+    --fh: 96cqh;            /* figure height   */
+    position: relative; overflow: hidden;
+    height: calc(100svh - 52px); min-height: 620px; max-height: 1000px;
+    container-type: size;
+  }
+  .field {                  /* blurred cobalt blocks (style3) */
+    position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  }
+  .field i { position: absolute; display: block; background: var(--cobalt); filter: blur(46px); border-radius: 18%; opacity: .55; }
+  .field i:nth-child(1) { left: 46cqw; top: 6cqh; width: 26cqw; height: 34cqh; }
+  .field i:nth-child(2) { left: 62cqw; top: 30cqh; width: 22cqw; height: 30cqh; opacity: .4; }
+  .field i:nth-child(3) { left: 40cqw; top: 40cqh; width: 10cqw; height: 40cqh; background: var(--haze); opacity: .7; }
+
+  .num {
+    position: absolute; z-index: 1; margin: 0;
+    left: calc(var(--gutter) - .04em); top: 2cqh;
+    font-family: var(--f-display); font-weight: 900; font-stretch: 62%;
+    font-size: min(96cqh, 62cqw); line-height: .78; letter-spacing: -.04em;
+    color: var(--slate); user-select: none; will-change: transform;
+  }
+  .name {
+    position: absolute; inset: 0; margin: 0; z-index: 2; pointer-events: none;
+  }
+  .name span {
+    position: absolute; left: var(--gutter); bottom: 5cqh;
+    font-family: var(--f-display); font-weight: 900; font-stretch: 88%;
+    font-size: min(10.6cqw, 22cqh); line-height: .8; letter-spacing: -.035em;
+    color: var(--prussian);
+  }
+  .name.on-figure { z-index: 4; }
+  .name.on-figure span { color: #fff; }
+  .name.on-figure {
+    -webkit-mask: url(../photos/ibm-cutout.webp) no-repeat;
+    -webkit-mask-size: auto var(--fh); -webkit-mask-position: var(--fx) 100%;
+            mask: url(../photos/ibm-cutout.webp) no-repeat;
+            mask-size: auto var(--fh); mask-position: var(--fx) 100%;
+  }
+  .fig {
+    position: absolute; z-index: 3; bottom: 0; left: var(--fx);
+    height: var(--fh); width: auto; display: block;
+  }
+
+  .hero { position: relative; }
+  .credits {
+    position: absolute; z-index: 5; right: var(--gutter); top: 36px;
+    width: min(300px, 30cqw); text-align: left;
+  }
+  .credits .by { font-family: var(--f-display); font-weight: 800; font-stretch: 125%; font-size: 13px; letter-spacing: .02em; color: var(--prussian); margin: 0 0 18px; }
+  .credits p { margin: 0 0 12px; font-weight: 300; font-size: 15px; line-height: 1.55; text-transform: lowercase; color: var(--ink); }
+  .credits .rec { margin-top: 22px; color: var(--prussian); line-height: 1.8; }
+  .sq { display: inline-block; width: 8px; height: 8px; border: 1px solid currentColor; margin-right: 8px; vertical-align: 1px; }
+
+  .sticker {
+    position: absolute; z-index: 5; right: var(--gutter); bottom: 5cqh;
+    width: 210px; padding: 10px 12px 10px; border: 1px solid rgba(11,13,24,.6); border-radius: 6px;
+    background: rgba(236,235,230,.92); color: var(--ink); line-height: 1.5;
+  }
+  .sticker .bar { height: 28px; margin: 8px 0 4px;
+    background: repeating-linear-gradient(90deg, var(--ink) 0 1px, transparent 1px 3px, var(--ink) 3px 5px, transparent 5px 6px, var(--ink) 6px 7px, transparent 7px 10px); }
+  .sticker .tab { display: block; background: var(--cornflower); height: 14px; margin-top: 6px; }
+  .vert {
+    position: absolute; z-index: 5; right: calc(var(--gutter) + 230px); bottom: 5cqh;
+    writing-mode: vertical-rl; color: var(--prussian);
+  }
+
+  @media (max-width: 760px) {
+    .cover { --fx: 20cqw; --fh: 76cqh; height: calc(100svh - 44px); min-height: 640px; max-height: 860px; }
+    .num { font-size: 70cqw; top: 1cqh; }
+    .name span { font-size: 13.2cqw; font-stretch: 66%; bottom: 3cqh; line-height: .82; }
+    .field i:nth-child(1) { left: 34cqw; top: 22cqh; width: 52cqw; height: 30cqh; }
+    .field i:nth-child(2) { left: 58cqw; top: 40cqh; width: 40cqw; }
+    .credits { position: relative; inset: auto; width: auto; }
+    .sticker, .vert { display: none; }
+    .nav { font-size: 10px; letter-spacing: .02em; }
+    .nav .links { gap: 10px; }
+    .credits-wrap { padding: 28px var(--gutter) 40px; border-top: 1px solid rgba(11,13,24,.35); }
+  }
+  
+</style>
+</head>
+<body class="paper grain">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <filter id="duotone" color-interpolation-filters="sRGB">
+    <feColorMatrix type="matrix" values=".30 .55 .15 0 0  .30 .55 .15 0 0  .30 .55 .15 0 0  0 0 0 1 0"/>
+    <feComponentTransfer>
+      <feFuncR type="table" tableValues=".043 .118 .431 .925"/>
+      <feFuncG type="table" tableValues=".051 .227 .608 .922"/>
+      <feFuncB type="table" tableValues=".094 .431 .918 .902"/>
+    </feComponentTransfer>
+  </filter>
+</svg>
+
+<nav class="nav mono">
+  <div class="links">
+    <a href="#about">[ about ]</a>
+    <a href="#work">[ discography ]</a>
+    <a href="#gal">[ gallery ]</a>
+  </div>
+  <div class="vol">vol. 01</div>
+</nav>
+
+<div class="hero">
+<header class="cover">
+  <div class="field" aria-hidden="true"><i></i><i></i><i></i></div>
+  <p class="num" aria-hidden="true">01</p>
+  <h1 class="name"><span>jaden<br />pathammavong</span></h1>
+  <img class="fig duo" src="../photos/ibm-cutout.webp" alt="headshot" />
+  <div class="name on-figure" aria-hidden="true"><span>jaden<br />pathammavong</span></div>
+
+  <div class="vert mono" aria-hidden="true">side a — liner notes overleaf</div>
+  <div class="sticker mono" aria-hidden="true">
+    <div>cmda ▢ virginia tech</div>
+    <div class="bar"></div>
+    <div>JP-VOL01-2026</div>
+    <span class="tab"></span>
+  </div>
+</header>
+  <div class="credits-wrap">
+    <div class="credits">
+      <div class="by">BY J.PATH</div>
+      <p>previous early associate consultant intern at ibm.</p>
+      <p>Computational modeling and data analytics at virginia tech.</p>
+      <div class="rec mono"><span class="sq"></span>recorded in virginia / 04 . 21 . 26.<br /><span class="sq"></span>all rights reserved.</div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  (() => {
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const n = document.querySelector('.num');
+    addEventListener('scroll', () => { n.style.transform = `translateY(${scrollY * 0.18}px)`; }, { passive: true });
+  })();
+</script>
+</body>
+</html>

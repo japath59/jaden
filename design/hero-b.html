@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>hero B — hazy poster</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Inter:wght@200..500&family=JetBrains+Mono:wght@300..500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="base.css" />
+<style>
+  body { background: var(--prussian); color: #fff; }
+  .poster { position: relative; min-height: 100svh; overflow: hidden; display: flex; flex-direction: column; isolation: isolate; }
+  .photo { position: absolute; inset: 0; z-index: -2; overflow: hidden;
+    background:
+      radial-gradient(60% 70% at 70% 30%, #7FA3CF 0%, transparent 70%),
+      radial-gradient(50% 60% at 20% 80%, #3C66A8 0%, transparent 70%),
+      linear-gradient(180deg, #8FAFD3 0%, #5A80B5 55%, #2B4C86 100%); }
+  .photo img {
+    position: absolute; height: 135%; width: auto; right: 4%; top: 6%;
+    filter: url(#duotone) blur(7px) contrast(.8);
+    opacity: .85;
+  }
+  .photo::after {            /* haze + scrim so small text holds AA */
+    content: ""; position: absolute; inset: 0;
+    background:
+      linear-gradient(180deg, rgba(169,195,218,.32) 0%, rgba(110,155,234,.10) 38%, rgba(30,58,110,.62) 70%, rgba(30,58,110,.88) 100%),
+      rgba(30,58,110,.28);
+  }
+  .nav { border-bottom-color: rgba(255,255,255,.55); }
+
+  .top { display: flex; justify-content: space-between; align-items: baseline; gap: 24px;
+    padding: clamp(56px, 12vh, 140px) var(--gutter) 0; }
+  .top h1 { margin: 0; font-weight: 200; font-size: clamp(34px, 4.4vw, 64px); letter-spacing: -.01em; line-height: 1; }
+  .top h1 small { font-size: .32em; font-weight: 300; letter-spacing: .02em; vertical-align: .9em; margin-left: .4em; }
+  .top .vol { font-weight: 200; font-size: clamp(34px, 4.4vw, 64px); line-height: 1; }
+
+  .lower { margin-top: auto; padding-bottom: 40px; }
+  .rule { display: flex; gap: 28px; align-items: baseline; flex-wrap: wrap;
+    padding: 0 var(--gutter) 10px; border-bottom: 1px solid rgba(255,255,255,.75);
+    font-weight: 300; font-size: clamp(18px, 1.7vw, 24px); }
+  .rule .m { font-family: var(--f-mono); font-size: 12px; letter-spacing: .08em; opacity: .9; }
+
+  .list { margin: 34px var(--gutter) 0; max-width: 760px; font-weight: 300; font-size: 14px; }
+  .row { display: grid; grid-template-columns: 110px 1fr 40px; gap: 18px; padding: 7px 0; border-bottom: 1px solid rgba(255,255,255,.22); }
+  .row .k { font-family: var(--f-mono); font-size: 12px; letter-spacing: .06em; }
+  .row .s { text-align: right; white-space: nowrap; font-family: var(--f-mono); font-size: 12px; }
+
+  .foot { display: flex; gap: 36px; flex-wrap: wrap; margin: 48px var(--gutter) 0; }
+
+  @media (max-width: 760px) {
+    .top { flex-direction: column; gap: 10px; padding-top: 48px; }
+    .top h1 { font-size: 40px; line-height: 1.05; }
+    .top h1 small { display: block; margin: 10px 0 0; vertical-align: 0; font-size: 13px; }
+    .top .vol { font-size: 22px; align-self: flex-end; }
+    .row { grid-template-columns: 64px 1fr 40px; gap: 10px; font-size: 13px; }
+    .nav { font-size: 10px; letter-spacing: .02em; }
+    .nav .links { gap: 10px; }
+    .photo img { height: 105%; right: -30%; top: 14%; }
+  }
+</style>
+</head>
+<body class="grain">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <filter id="duotone" color-interpolation-filters="sRGB">
+    <feColorMatrix type="matrix" values=".30 .55 .15 0 0  .30 .55 .15 0 0  .30 .55 .15 0 0  0 0 0 1 0"/>
+    <feComponentTransfer>
+      <feFuncR type="table" tableValues=".118 .278 .431 .66 .925"/>
+      <feFuncG type="table" tableValues=".227 .40 .608 .765 .922"/>
+      <feFuncB type="table" tableValues=".431 .62 .918 .855 .902"/>
+    </feComponentTransfer>
+  </filter>
+</svg>
+
+<header class="poster">
+  <div class="photo"><img src="../photos/ibm-cutout.webp" alt="headshot" /></div>
+
+  <nav class="nav mono">
+    <div class="links">
+      <a href="#about">[ about ]</a>
+      <a href="#work">[ discography ]</a>
+      <a href="#gal">[ gallery ]</a>
+    </div>
+    <div>vol. 01</div>
+  </nav>
+
+  <div class="top">
+    <h1>jaden pathammavong <small>( vol. 01 )</small></h1>
+    <div class="vol">j.path</div>
+  </div>
+
+  <div class="lower">
+    <div class="rule">
+      <span>recorded in virginia</span>
+      <span class="m">04 . 21 . 26</span>
+      <span class="m">/ all rights reserved.</span>
+    </div>
+    <div class="list">
+      <div class="row"><span class="k">side a</span><span>previous early associate consultant intern at ibm.</span><span class="s">[ ◊ ]</span></div>
+      <div class="row"><span class="k">side b</span><span>computational modeling and data analytics at virginia tech.</span><span class="s">[ ♦ ]</span></div>
+    </div>
+    <div class="foot mono">
+      <span>liner notes / scroll</span>
+      <span>[ ◊ ] industry&nbsp;&nbsp;[ ♦ ] study</span>
+    </div>
+  </div>
+</header>
+</body>
+</html>
